@@ -1,0 +1,32 @@
+//---------------------------------------
+// transaction.sv
+// Description: Defines the transaction class that carries address, read/write, and data values.
+// Author: Ahmed Raza
+// Date: Nov 5, 2024
+//---------------------------------------
+
+class transaction extends uvm_sequence_item;
+  
+  //---------------------------------------
+  // Variable Declaration
+  //---------------------------------------
+  rand bit [3:0] addr;       // Address field (4-bit)
+  rand bit       wr_rd;      // Read/Write flag (1-bit)
+  rand bit [7:0] wdata;      // Data field (8-bit)
+  
+  //---------------------------------------
+  // Utility and Field macros
+  //---------------------------------------
+  `uvm_object_utils_begin(transaction)
+    `uvm_field_int(addr, UVM_ALL_ON)
+    `uvm_field_int(wr_rd, UVM_ALL_ON)
+    `uvm_field_int(wdata, UVM_ALL_ON)
+  `uvm_object_utils_end
+  
+  //---------------------------------------
+  // Constructor
+  //---------------------------------------  
+  function new(string name = "transaction");
+    super.new(name);
+  endfunction
+endclass
