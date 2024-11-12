@@ -1,0 +1,30 @@
+interface count_intf(input logic clk);
+  
+  // Declaring the signals
+  logic [3:0] out;
+  logic enable;
+  logic rstn;
+
+  // Driver clocking block
+  clocking driver_cb @(posedge clk);
+    default input #1 output #1;
+    output enable;
+    output rstn;
+    input  out;  
+  endclocking
+  
+  // Monitor clocking block
+  clocking monitor_cb @(posedge clk);
+    default input #1 output #1;
+    input enable;
+    input rstn;
+    input out;  
+  endclocking
+  
+  // Driver modport
+  modport DRIVER  (clocking driver_cb, input clk);
+  
+  // Monitor modport  
+  modport MONITOR (clocking monitor_cb, input clk);
+  
+endinterface
