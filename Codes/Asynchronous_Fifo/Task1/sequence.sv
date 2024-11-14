@@ -4,11 +4,13 @@
 // Description: Base sequence class for generating FIFO push transactions. 
 //              Includes ASCII display of randomized wdata for readability.
 // ============================================================================
+// `include "config.sv"
 
 class base_sequence extends uvm_sequence #(sequence_item);
   `uvm_object_utils(base_sequence);
   
   sequence_item fifo_push; // Sequence item for FIFO transactions
+  fifo_config f_cnfg;
   
   // Constructor to initialize base sequence
   function new(string name = "base_sequence");
@@ -17,6 +19,8 @@ class base_sequence extends uvm_sequence #(sequence_item);
   
   // Main task body to execute the sequence
   task body();
+      
+
     repeat (30) begin
       // Create and randomize sequence item for each iteration
       fifo_push = sequence_item::type_id::create("fifo_push");
@@ -24,7 +28,7 @@ class base_sequence extends uvm_sequence #(sequence_item);
       assert(fifo_push.randomize());
       
       // Display randomized data in ASCII character format for readability
-      `uvm_info("Sequence", "Randomized wdata (Character Format):", UVM_NONE)
+      `uvm_info("Bse Sequence", "Randomized wdata (Character Format):", UVM_NONE)
       $display("\n-----------------------------------------");
       $display("|  Timestamp  |   wdata (ASCII)         |");
       $display("-----------------------------------------");

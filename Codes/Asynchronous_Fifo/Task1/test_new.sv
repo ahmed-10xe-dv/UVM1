@@ -7,10 +7,9 @@
 //              in ASCII character format for readability.
 // ============================================================================
 
-class  test_new extends base_sequence #(sequence_item);
+class  test_new extends base_sequence;
     `uvm_object_utils(test_new);
     
-    sequence_item fifo_push; // Sequence item for FIFO transactions
     
     // Constructor to initialize base sequence
     function new(string name = "test_new");
@@ -33,7 +32,7 @@ class  test_new extends base_sequence #(sequence_item);
     
         
         // Display randomized data in ASCII character format for readability
-        `uvm_info("Sequence", "Randomized wdata (Character Format):", UVM_NONE)
+        `uvm_info("Sequence_Test New", "Randomized wdata (Character Format):", UVM_NONE)
         $display("\n-----------------------------------------");
         $display("|  Timestamp  |   wdata (ASCII)         |");
         $display("-----------------------------------------");

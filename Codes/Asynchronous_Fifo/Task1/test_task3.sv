@@ -10,7 +10,6 @@
 class test_task3 extends base_sequence;
     `uvm_object_utils(test_task3);
     
-    sequence_item fifo_push; // Sequence item for FIFO transactions
     
     // Constructor to initialize base sequence
     function new(string name = "test_task3");

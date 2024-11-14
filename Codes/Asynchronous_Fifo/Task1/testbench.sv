@@ -20,13 +20,18 @@ parameter TEST_FLOW_LENGTH = 50;
 typedef uvm_sequencer #(sequence_item) sequencer;
 
 // Include all UVM components for testbench
-`include "sequence.sv"
+
 `include "driver.sv"
 `include "input_flow_monitor.sv"
 `include "output_flow_monitor.sv"
+`include "config.sv"
 `include "scoreboard.sv"
 `include "env.sv"
+`include "sequence.sv"
 `include "async_fifo_base_test.sv"
+`include "test_new.sv"
+`include "test_task3.sv"
+`include "test_config.sv"
 `include "async_fifo_bfm.sv"
 
 program test_prog(interface bfm);  // Test program to run the UVM test
