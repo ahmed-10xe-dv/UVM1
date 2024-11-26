@@ -1,0 +1,25 @@
+Error-[IRPC] Illegal ref port connection
+../sv/router_scoreboard.sv, 92
+tb_top, "CHANNEL_0"
+  Illegal connection to the ref port 'channel_id' of function/task 
+  'router_scoreboard::write_channel',formal argument should have same type as 
+  actual argument.
+
+
+Error-[IRPC] Illegal ref port connection
+../sv/router_scoreboard.sv, 97
+tb_top, "CHANNEL_1"
+  Illegal connection to the ref port 'channel_id' of function/task 
+  'router_scoreboard::write_channel',formal argument should have same type as 
+  actual argument.
+
+
+Error-[IRPC] Illegal ref port connection
+../sv/router_scoreboard.sv, 102
+tb_top, "CHANNEL_2"
+  Illegal connection to the ref port 'channel_id' of function/task 
+  'router_scoreboard::write_channel',formal argument should have same type as 
+  actual argument.
+
+3 errors
+
