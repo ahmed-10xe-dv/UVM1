@@ -16,7 +16,7 @@ The *verif* directory contains the core components of the verification environme
 
 The *tests* directory houses various assembly test programs and binaries for functional and performance validation of the DUT. It includes individual test cases (*example*.*S*, *init\_regs*.*S*) and grouped tests under the *assembly\_test* folder, which focuses on specific scenarios like arithmetic operations and user-defined initialization. Test artifacts such as binaries (.*bin*), assembly files (.*ass*), and executable files (.*elf*) ensure seamless integration and execution during simulations.
 
-![](pictures/Aspose.Words.115826cb-7a62-4788-97ac-22c8ee913da6.001.png)
+![](part-i/pictures/Aspose.Words.115826cb-7a62-4788-97ac-22c8ee913da6.001.png)
 
 
 
@@ -24,23 +24,23 @@ The *tests* directory houses various assembly test programs and binaries for fun
 
 The **Instruction Agent** is a key part of the Inst UVC. It encapsulates the driver, monitor, and sequencer for instruction-related functionality. This component is responsible for connecting Sequencer and Monitor, and Sequencer and Driver. 
 
-![](pictures/Aspose.Words.115826cb-7a62-4788-97ac-22c8ee913da6.002.png)
+![](part-i/pictures/Aspose.Words.115826cb-7a62-4788-97ac-22c8ee913da6.002.png)
 
 The **Data Agent** is part of the Data UVC, combining the driver, monitor, and sequencer for verifying data transactions. It connects the Data Sequencer and Data Driver.
 
-![](pictures/Aspose.Words.115826cb-7a62-4788-97ac-22c8ee913da6.003.png)
+![](part-i/pictures/Aspose.Words.115826cb-7a62-4788-97ac-22c8ee913da6.003.png)
 
 **Environment:**
 
 The **env class** sets up the core verification environment by creating and managing the **data agent**, **instruction agent**, and **virtual sequencer**. During the **build phase**, it initializes these components, and in the **connect phase**, it connects the agents' sequencers to the virtual sequencer for coordinated operation. This class serves as a central hub for managing the UVCs and ensures seamless interaction between them.
 
-![](pictures/Aspose.Words.115826cb-7a62-4788-97ac-22c8ee913da6.004.png)
+![](part-i/pictures/Aspose.Words.115826cb-7a62-4788-97ac-22c8ee913da6.004.png)
 
 **Base Test:**
 
 The **base\_test class** serves as the foundation for the verification environment. It initializes the environment, virtual sequence, and memory model while managing the DUT's setup and binary file loading. It also monitors for specific instructions like ECALL to adjust DUT behavior dynamically. This class ensures a streamlined test flow by integrating interfaces, processing command-line arguments, and running sequences.
 
-![](pictures/Aspose.Words.115826cb-7a62-4788-97ac-22c8ee913da6.005.png)
+![](part-i/pictures/Aspose.Words.115826cb-7a62-4788-97ac-22c8ee913da6.005.png)
 
 **Interfaces:**
 
@@ -51,14 +51,14 @@ The **inst\_intf** interface handles communication between components for instru
 The **dut\_intf** interface centralizes signals for the **ibex\_top** module, including instruction and data memory interfaces and CPU control signals. It manages signals like fetch enable, read/write requests, and address/data buses. This simplifies instantiation and integration in **tb\_top**.
 
 
-![](pictures/Aspose.Words.115826cb-7a62-4788-97ac-22c8ee913da6.006.png)
+![](part-i/pictures/Aspose.Words.115826cb-7a62-4788-97ac-22c8ee913da6.006.png)
 
 
 **Tb Top:**
 
 The **tb\_top module** serves as the top-level testbench for UVM-based verification, instantiating clock, reset, and DUT interfaces. It includes the DUT (ibex\_top\_tracing), connects its ports to the instruction and data interfaces, and sets up UVM virtual interfaces for simulation. Key configurations and UVM tests are initialized, with clock and reset generation included for seamless operation. It starts the base test.
 
-![](pictures/Aspose.Words.115826cb-7a62-4788-97ac-22c8ee913da6.007.png)
+![](part-i/pictures/Aspose.Words.115826cb-7a62-4788-97ac-22c8ee913da6.007.png)
 
 
 ### <a name="_cpi0obxgihcf"></a>**How the Test Starts?**
